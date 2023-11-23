@@ -131,7 +131,7 @@ Please write your answers here
 12. {UNUSED:- The process has been created but not scheduled yet.
     EMBRYO :- The process is in the state of being created. SLEEPING:- The process is waiting for I/O operation or timer interrupt has occured.
     RUNNABLE:- The process can be scheduled for running. RUNNING:- The process has currently occupied the CPU. ZOMBIE:- The process has finished its execution, parent process is waiting for its exit status.}
-13. ahbs
+13. The file system structure in XV6 is built on a simple and effective design. Key components include the superblock, inode, inode table, data blocks, directory entries, and the file descriptor table. The superblock contains critical information about the file system, such as its size and the location of the inode table. Inodes store metadata about files or directories, including permissions and data block pointers. The inode table is an array of inodes, and data blocks store the actual content. Directory entries associate filenames with inode numbers. The file descriptor table maintains information about open files for a process. This structured design allows XV6 to organize and manage files efficiently while providing a clear interface for user-level programs to interact with the file system.
 14. System calls provide a way for user-level processes to interact with the lower-level functionalities of the operating system, which are typically implemented in the kernel.Examples :- fork(), exit(), pipe() etc.
     Library functions are higher-level functions provided by libraries that are linked to user-level programs. These functions are written in user space and are not part of the operating system kernel.
  Examples :- printf(),cprintf(),malloc() etc.
@@ -141,11 +141,7 @@ Please write your answers here
         Semaphores: Higher-level synchronization primitive.
         Condition Variables: Used for signaling between processes.
     Importance: Prevents data corruption, avoids race conditions, ensures orderly execution, and maintains system stability.
-18.    Role: Signals to the CPU for immediate attention.
-    Handling: Managed by ISRs in the Interrupt Vector Table.
-    Significance:
-        Efficient I/O handling.
-        Real-time responsiveness.
-        Supports concurrency and multitasking.
-        Facilitates device interaction.
+18.   In XV6, interrupts play a crucial role by signaling the CPU for immediate attention. Handled through Interrupt Service Routines (ISRs) and the Interrupt Vector Table, interrupts enable efficient I/O handling, real-time responsiveness, support for concurrency and multitasking, and facilitate interaction with devices. They allow the operating system to respond promptly to external events, ensuring efficient system operation and the ability to handle multiple tasks concurrently.
+19.   Virtual memory is a memory management technique that provides an idealized abstraction of the storage resources that are actually available on a given machine, which creates the illusion to users of a very large (main) memory. In XV6, virtual memory is implemented through a combination of paging and demand paging. The operating system uses a two-level page table structure to map virtual addresses to physical addresses. Pages are loaded into physical memory only when needed, and the rest reside on disk. This allows the system to use disk space as an extension of physical memory, providing the illusion of a larger memory space than physically available. The advantages of using virtual memory in XV6 include efficient utilization of physical memory, support for larger address spaces, isolation between processes, and the ability to have processes with memory requirements larger than the physical RAM. This improves overall system flexibility and enables better multitasking and resource management.
+20.   The boot process of XV6 involves several steps from the moment the computer is powered on. Initially, the computer's firmware, such as the BIOS or UEFI, is executed. This firmware performs hardware initialization, checks for connected devices, and loads the boot loader from the boot device (typically a disk). The boot loader, such as GRUB, is responsible for locating the XV6 kernel image on the disk and loading it into memory. Once loaded, the kernel takes control, initializes essential system components, sets up the page tables, and begins executing. The kernel then launches the `init` process, serving as the initial user-space process, which further initializes the user environment. This completes the boot process, and the system transitions to a state ready for user interaction and process execution in XV6.
 
