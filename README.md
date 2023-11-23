@@ -117,3 +117,35 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
+1. c Unix Like Operating system
+2. b Linux
+3. d. simple
+4. b interrupts
+5. a 64 (maximum number of processes that can run is NPROC = 64)
+6. c. Sh
+7. a. Round-Robin Scheduling
+8. a. Paging
+9. d. both b and c
+10. a. Yes
+11. c. MIT
+12. {UNUSED:- The process has been created but not scheduled yet.
+    EMBRYO :- The process is in the state of being created. SLEEPING:- The process is waiting for I/O operation or timer interrupt has occured.
+    RUNNABLE:- The process can be scheduled for running. RUNNING:- The process has currently occupied the CPU. ZOMBIE:- The process has finished its execution, parent process is waiting for its exit status.}
+13. ahbs
+14. System calls provide a way for user-level processes to interact with the lower-level functionalities of the operating system, which are typically implemented in the kernel.Examples :- fork(), exit(), pipe() etc.
+    Library functions are higher-level functions provided by libraries that are linked to user-level programs. These functions are written in user space and are not part of the operating system kernel.
+ Examples :- printf(),cprintf(),malloc() etc.
+15.In XV6, memory paging divides virtual and physical memory into fixed-size pages, managed by two-level page tables. Paging allows for virtual memory, memory isolation, efficient use of physical memory, and dynamic memory allocation. It simplifies address translation and facilitates page faults and replacement when needed.
+16. ls:- list all the files in the current directory, cd:- used to change the current working directory, cp:- used to copy files from one directory to another.
+17. Spinlocks: Basic lock for mutual exclusion.
+        Semaphores: Higher-level synchronization primitive.
+        Condition Variables: Used for signaling between processes.
+    Importance: Prevents data corruption, avoids race conditions, ensures orderly execution, and maintains system stability.
+18.    Role: Signals to the CPU for immediate attention.
+    Handling: Managed by ISRs in the Interrupt Vector Table.
+    Significance:
+        Efficient I/O handling.
+        Real-time responsiveness.
+        Supports concurrency and multitasking.
+        Facilitates device interaction.
+
